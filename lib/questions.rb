@@ -5,6 +5,7 @@ end
 
 # keep only the elements that start with a vowel
 def select_elements_starting_with_vowel(array)
+	array.select {|element| element.start_with?('/[aeiou]/')}
 end
 
 # remove instances of nil (but NOT false) from an array
@@ -131,7 +132,7 @@ end
 # . e.g. the array ['cat', 'dog', 'fish'] becomes
 # ['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']
 def get_all_letters_in_array_of_words(array)
-
+	array.map {|element| element.chars}.flatten.sort
 end
 
 # swap the keys and values in a hash. e.g.
