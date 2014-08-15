@@ -1,6 +1,6 @@
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
-	array.select {|element| element.start_with?(a)}
+	array.select {|element| element.start_with?('a')}
 end
 
 # keep only the elements that start with a vowel
@@ -39,11 +39,13 @@ end
 
 # add an element to the beginning of an array
 def add_element_to_beginning_of_array(array, element)
+	array.insert(0, element)
 end
 
 # sort an array of words by their last letter, e.g.
 # ['sky', 'puma', 'maker'] becomes ['puma', 'maker', 'sky']
 def array_sort_by_last_letter_of_word(array)
+	((array.map {|element| element.reverse}).sort).map {|element| element.reverse}
 end
 
 # cut strings in half, and return the first half, e.g.
@@ -56,6 +58,7 @@ end
 # turn a positive integer into a negative integer. A negative integer
 # stays negative
 def make_numbers_negative(number)
+	number > 0 ? 0 - number : number
 end
 
 # turn an array of numbers into two arrays of numbers, one an array of 
@@ -120,7 +123,7 @@ end
 # pairing up elements. e.g. ['a', 'b', 'c', 'd'] becomes
 # {'a' => 'b', 'c' => 'd'}
 def convert_array_to_a_hash(array)
-	(array.each_slice(2) {|slice| slice.to_h})
+	array.each_slice(2).to_a.to_h
 end
 
 # get all the letters used in an array of words and return
