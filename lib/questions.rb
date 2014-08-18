@@ -5,7 +5,7 @@ end
 
 # keep only the elements that start with a vowel
 def select_elements_starting_with_vowel(array)
-	array.select {|element| element.start_with?('/[aeiou]/')}
+	array.select {|element| element.match(/^[aeiou]/i)}
 end
 
 # remove instances of nil (but NOT false) from an array
@@ -118,6 +118,14 @@ end
 # [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
 # becomes [1, 3, 5, 4, 1, 2]
 def get_elements_until_greater_than_five(array)
+	array2 = []
+	break_point = false 
+	array.each do |element|
+		array2 << element if element <= 5 && !break_point	
+		break_point = true if element > 5 
+	
+	end
+	array2	
 end
 
 # turn an array (with an even number of elements) into a hash, by
@@ -175,6 +183,7 @@ end
 # get the domain name *without* the .com part, from an email address
 # so alex@makersacademy.com becomes makersacademy
 def get_domain_name_from_email_address(email)
+
 end
 
 # capitalize the first letter in each word of a string, 
@@ -189,6 +198,7 @@ end
 # where 'special character' means anything apart from the letters
 # a-z (uppercase and lower) or numbers
 def check_a_string_for_special_characters(string)
+	string.include?(/\W/)
 end
 
 # get the upper limit of a range. e.g. for the range 1..20, you
@@ -205,6 +215,7 @@ end
 
 # get the square root of a number
 def square_root_of(number)
+	Math.sqrt(number)
 end
 
 # count the number of words in a file
@@ -218,6 +229,7 @@ end
 # called call_method_from_string('foobar')
 # the method foobar should be invoked
 def call_method_from_string(str_method)
+	string_method.call
 end
 
 # return true if the date is a uk bank holiday for 2014
