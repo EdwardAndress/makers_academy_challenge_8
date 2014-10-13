@@ -192,6 +192,14 @@ end
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
 def titleize_a_string(string)
+	arry = string.split(" ")
+	arry.each do |word|
+		if word != "a" && word != "the" && word != "and"
+			word.capitalize!
+		end
+		arry[0].capitalize!
+	end
+		title = arry.join(" ")
 end
 
 # return true if a string contains any special characters
