@@ -192,14 +192,10 @@ end
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
 def titleize_a_string(string)
-	arry = string.split(" ")
-	arry.each do |word|
-		if word != "a" && word != "the" && word != "and"
-			word.capitalize!
-		end
-		arry[0].capitalize!
-	end
-		title = arry.join(" ")
+	small_words = ["a", "and", "the"]
+	((string.capitalize!).split(" ")).each do |word| #capitalize first word, regardless, then split string
+		!small_words.include?(word) ? word.capitalize! :  #only capitalize other words if absent from small words array
+	end.join(" ") #rejoin the words into a string
 end
 
 # return true if a string contains any special characters
