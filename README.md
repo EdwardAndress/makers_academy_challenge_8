@@ -1,4 +1,4 @@
-###Makers Academy Weekend Challenge 8
+###[Makers Academy] Weekend Challenge 8
 
 Each week at Makers Academy, we were assigned bonus coding challenges for the weekend - hooray!
 
@@ -22,3 +22,4 @@ Test it:
 ```sh
 $ rspec questions_spec.rb
 ```
+[Makers Academy]: http://makersacademy.com
